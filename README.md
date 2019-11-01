@@ -1,10 +1,15 @@
 # libGadget
 
 This repository contains a Windows DLL and headers for interfacing with ETC
-Gadget 2 products. 32- and 64-bit DLLs are provided. Currently, non-Windows
-platforms are not supported.
+Gadget products.
+[Gadget II](https://www.etcconnect.com/Products/Networking/Gadget-II/Features.aspx)
+is a 2-port USB-to-DMX512 converter sold by [ETC](https://www.etcconnect.com).
+It supports DMX, RDM and "Raw Mode" - sending and receiving arbitrary serial
+data on the DMX bus. All of these features can be accessed through this DLL
+interface. Legacy one-port Gadgets are also supported.
 
-The DLLs are built with the MSVC 2017 toolchain.
+32- and 64-bit DLLs are provided. The DLLs are built with the MSVC 2017
+toolchain. Currently, non-Windows platforms are not supported.
 
 To include libGadget in a CMake project, you can use `find_package()`:
 
