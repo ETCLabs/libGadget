@@ -1,8 +1,23 @@
+/******************************************************************************
+ * Copyright 2019 ETC Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *****************************************************************************/
 
 /* rdmEtcConsts.h -- Constants needed for general parsing of RDM packets, etc.*/
 
-#ifndef _RDMETCCONSTS_H_
-#define _RDMETCCONSTS_H_
+#ifndef RDM_ETC_CONSTS_H_
+#define RDM_ETC_CONSTS_H_
 
 /* The ETC manufacturer id for the UID, both bytes */
 #define RDM_ETC_MANUFACTURERS	0x6574		/*Our Manufacturer ID: "et" */
@@ -289,4 +304,4 @@
 
 #define E120_ETC_NR_TIMEOUT                              0x8001 /* The responder timed out without sending a response.          */
 
-#endif  /* _RDMETCCONSTS_H_ */
+#endif  /* RDM_ETC_CONSTS_H_ */
