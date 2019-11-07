@@ -27,8 +27,7 @@ public:
 	RDM_CmdC(void)
 	{
 		m_Buffer = 0;
-		setCommand(0); setParameter(0); setSubdevice(0); setLength(0); setManufacturerId(0); setTransactionNum(0);
-		setMessageCount(0); setDeviceId(0); setResponseType(0);
+		reset();
 	}
 	RDM_CmdC(uint8_t cmd, uint16_t parameter, uint16_t subdevice = 0, uint8_t len = 0,
 		const void *buffer = 0, uint16_t manu = 0, uint32_t dev = 0)
@@ -43,7 +42,6 @@ public:
 		operator=(src);
 	};
 	virtual ~RDM_CmdC(void)				{ setBuffer(0); };
-	virtual RDM_CmdC *copyThis(void) const {return new RDM_CmdC(*this);};
 	void operator=(const RDM_CmdC &src)
 	{
 		setCommand(src.getCommand()); setParameter(src.getParameter()); setSubdevice(src.getSubdevice());
@@ -54,7 +52,7 @@ public:
 
 	bool operator==(const RDM_CmdC &cmd) const
 	{
-		if((getCommand() != cmd.getCommand()) || (getParameter() != cmd.getParameter()) ||
+		if((getCommand() != cmd.getCommand()) || (getParameter() != cmd.getParameter()) || 
 				(getSubdevice() != cmd.getSubdevice()) || (getLength() != cmd.getLength()) ||
 				(getTransactionNum() != cmd.getTransactionNum()) || (getMessageCount() != cmd.getMessageCount()) ||
 				(getResponseType() != cmd.getResponseType()) || (getDeviceId() != cmd.getDeviceId()) ||
@@ -74,9 +72,17 @@ public:
 		}
 
 		return true;
-	}
-	bool operator!=(const RDM_CmdC &cmd) const { return !(operator ==(cmd)); }
+		}
+		bool operator!=(const RDM_CmdC &cmd) const { return !(operator ==(cmd)); }
 
+	void reset(void)
+	{
+		setCommand(0); setParameter(0); setSubdevice(0); setLength(0); setManufacturerId(0); setTransactionNum(0);
+		setMessageCount(0); setDeviceId(0); setResponseType(0);
+		setBuffer(0);
+	}
+
+	bool isValid(void) const				{ return (getCommand() != 0 || getParameter() != 0); };
 	friend bool operator<(const RDM_CmdC& a, const RDM_CmdC& b);
 	friend bool operator>(const RDM_CmdC & lhs, const RDM_CmdC & rhs) { return rhs < lhs; }
 	friend bool operator<=(const RDM_CmdC & lhs, const RDM_CmdC & rhs) { return !(lhs > rhs); }
