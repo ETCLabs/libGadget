@@ -137,9 +137,9 @@
 #define E120_ETC_SIMPLESETUPMODE_DESCRIPTION              0x8117
 #define E120_ETC_OVERTEMPMODE_DESCRIPTION                 0x8118
 #define E120_ETC_LED_REQUESTED_XY	                      0x8119
-#define E120_ETC_LED_CURRENT_XY	                         0x811A
-#define E120_ETC_LED_CURRENT_PWM	                         0x811B
-#define E120_ETC_LED_TRISTIMULUS                        	 0x811C
+#define E120_ETC_LED_CURRENT_XY	                          0x811A
+#define E120_ETC_LED_CURRENT_PWM	                      0x811B
+#define E120_ETC_LED_TRISTIMULUS                          0x811C
 #define E120_ETC_LED_INFORMATION                          0x811D
 #define E120_ETC_PRESETCONFIG                             0x811E
 #define E120_ETC_SEQUENCE_PLAYBACK                        0x811F
@@ -177,6 +177,8 @@
 #define E120_ETC_AUTOBIND                                 0xA006
 
 #define E120_ETC_PACKET_DELAY                             0xB000
+
+#define E120_RAYN_GET_SPD_UUID						      0xC000
 
 #define E120_ETC_HAS_ENUM_TEXT                            0xE000
 #define E120_ETC_GET_ENUM_TEXT                            0xE001

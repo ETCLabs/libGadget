@@ -222,6 +222,9 @@ extern "C"
 
     /* Send an RDM command with a context value which can be retrieved with the response */
     GADGET_DLL_API void Gadget2_SendRDMCommandWithContext(unsigned int DeviceNum, unsigned int PortNum, unsigned char Cmd, unsigned short ParameterID, unsigned short SubDevice, unsigned char DataLen, const char * Buffer, unsigned short ManfID, unsigned int DevID, const void * Context);
+
+    /* Set the interval at which background polling happens, in milliseconds; set to 0 or below to disable */
+    GADGET_DLL_API void Gadget2_SetBackgroundPollingInterval(unsigned int DeviceNum, unsigned int PortNum, int interval);
 }
 
 #endif /* GADGETDLL_H_ */
