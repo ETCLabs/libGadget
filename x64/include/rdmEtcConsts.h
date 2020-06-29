@@ -267,6 +267,8 @@
 /* Table C-2: Slot ID Definitions                       */
 /********************************************************/
 
+// TODO: Rename E120_SD_INTENSITY_MASTER once it's changed in the standard.
+
 #define E120_SD_INTENSITY                                      0x0001
 #define E120_SD_INTENSITY_MASTER                               0x0002
 #define E120_SD_PAN                                            0x0101
