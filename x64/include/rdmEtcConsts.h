@@ -150,16 +150,42 @@
 #define E120_ETC_LED_ENUM_FREQUENCY_DESCRIPTION           0x8124
 #define E120_ETC_RGBI_PRESETCONFIG                        0x8125
 #define E120_ETC_CCT_PRESETCONFIG                         0x8126
+#define E120_ETC_SENSOR_VERBOSITY                         0x8127
+#define E120_ETC_SECRET_CONTROL_MODE                      0x8128
+#define E120_ETC_ADVANCED_RGB_PRESETCONFIG                0x8129
+#define E120_ETC_RGBA_PRESETCONFIG						  0x812A
 
 #define E120_ETC_SUPPLEMENTARY_DEVICE_VERSION             0x8130
-#define	E120_ETC_START_UWB_DISCOVER						  0x8150
-#define	E120_ETC_START_UWB_MEASURE						  0x8151
-#define E120_ETC_POSITION								  0x8152
+#define E120_ETC_START_UWB_DISCOVER                       0x8150
+#define E120_ETC_START_UWB_MEASURE                        0x8151
+#define E120_ETC_POSITION                                 0x8152
 
+#define E120_ETC_LEDSPECTRALDATA						  0x8160
+
+#define E120_ETC_EFFECTS_PROPERTIES						  0x81F0
+#define E120_ETC_STUDIO_PRESET_CONFIG					  0x81F1
+/**** AUTOMATED LIGHTING *****/
+#define E120_ETC_HOME_FIXTURE                             0x8200
+#define E120_ETC_HOME_FIXTURE_DESCRIPTION                 0x8201
+
+#define E120_ETC_DMX_LOSS_WAIT_TIME                       0x8202
+#define E120_ETC_DMX_LOSS_FADE_TIME                       0x8203
+
+#define E120_ETC_PAN_LIMIT_MIN                            0x8204
+#define E120_ETC_PAN_LIMIT_MAX                            0x8205
+//#define E120_ETC_PAN_LIMIT_DESCRIPTION                    0x8205
+
+#define E120_ETC_TILT_LIMIT_MIN                           0x8206
+#define E120_ETC_TILT_LIMIT_MAX                           0x8207
+//#define E120_ETC_TILT_LIMIT_DESCRIPTION                   0x8207
+/**** END AUTOMATED LIGHTING ****/
 
 #define E120_ETC_MULTIVERSE_SHOWID                        0x8C00
 #define E120_ETC_MULTIVERSE_INCOMPLETE_PACKETS            0x8C01
 #define E120_ETC_MULTIVERSE_RX_RSSI                       0x8C02
+#define E120_ETC_MULTIVERSE_SHOWKEY                       0x8C03
+#define E120_ETC_MULTIVERSE_ENABLE                        0x8C04
+#define E120_ETC_MULTIVERSE_UNIVERSE                      0x8C05
 
 #define E120_ETC_S4DIM_CALIBRATE                          0x9000
 #define E120_ETC_S4DIM_CALIBRATE_DESCRIPTION              0x9001
@@ -178,7 +204,8 @@
 
 #define E120_ETC_PACKET_DELAY                             0xB000
 
-#define E120_RAYN_GET_SPD_UUID						      0xC000
+#define E120_RAYN_SPD_UUID						      	  0xC000
+#define E120_RAYN_SPD							      	  0xC001
 
 #define E120_ETC_HAS_ENUM_TEXT                            0xE000
 #define E120_ETC_GET_ENUM_TEXT                            0xE001
@@ -199,6 +226,10 @@
 #define E120_DS_ETC_SEQUENCECONFIG                          0xA5
 #define E120_DS_ETC_RGBI_PRESETCONFIG                       0xA6
 #define E120_DS_ETC_CCT_PRESETCONFIG                        0xA7
+#define E120_DS_ETC_EFFECTPROPS                             0xA8
+#define E120_DS_ETC_STUDIOPRESET                            0xA9
+#define E120_DS_ETC_ADVANCED_RGBI_PRESETCONFIG              0xAA
+#define E120_DS_ETC_RGBA_PRESETCONFIG						0xAB
 
 // The following are typically defined in estardm_StatusSlots.h since they are NOT ETC specific
 #ifndef E120_STS_CAL_FAIL
@@ -266,6 +297,8 @@
 /********************************************************/
 /* Table C-2: Slot ID Definitions                       */
 /********************************************************/
+
+// TODO: Rename E120_SD_INTENSITY_MASTER once it has been changed in the standard.
 
 #define E120_SD_INTENSITY                                      0x0001
 #define E120_SD_INTENSITY_MASTER                               0x0002

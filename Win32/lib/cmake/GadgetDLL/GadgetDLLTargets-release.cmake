@@ -12,8 +12,8 @@ set_target_properties(GadgetDLL::GadgetDLL PROPERTIES
   IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/GadgetDLL.dll"
   )
 
-list(APPEND _IMPORT_CHECK_TARGETS GadgetDLL::GadgetDLL )
-list(APPEND _IMPORT_CHECK_FILES_FOR_GadgetDLL::GadgetDLL "${_IMPORT_PREFIX}/lib/GadgetDLL.lib" "${_IMPORT_PREFIX}/bin/GadgetDLL.dll" )
+list(APPEND _cmake_import_check_targets GadgetDLL::GadgetDLL )
+list(APPEND _cmake_import_check_files_for_GadgetDLL::GadgetDLL "${_IMPORT_PREFIX}/lib/GadgetDLL.lib" "${_IMPORT_PREFIX}/bin/GadgetDLL.dll" )
 
 # Commands beyond this point should not need to know the version.
 set(CMAKE_IMPORT_FILE_VERSION)

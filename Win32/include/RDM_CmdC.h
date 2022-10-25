@@ -29,7 +29,7 @@ public:
 		m_Buffer = 0;
 		reset();
 	}
-	RDM_CmdC(uint8_t cmd, uint16_t parameter, uint16_t subdevice = 0, uint8_t len = 0,
+	RDM_CmdC(uint8_t cmd, uint16_t parameter, uint16_t subdevice = 0, size_t len = 0,
 		const void *buffer = 0, uint16_t manu = 0, uint32_t dev = 0)
 	{
 		m_Buffer = 0;
@@ -91,7 +91,7 @@ public:
 	uint8_t getCommand(void) const			{ return m_Command; };
 	uint16_t getParameter(void) const		{ return m_Parameter; };
 	uint16_t getSubdevice(void) const		{ return m_Subdevice; };
-	uint8_t getLength(void) const			{ return m_Length; };
+	size_t getLength(void) const			{ return m_Length; };
 	const void *getBuffer(void) const		{ return m_Buffer; };
 	uint8_t getTransactionNum(void) const { return m_TransactionNum; }
 	uint8_t getResponseType(void) const		{ return m_ResponseType; };
@@ -102,7 +102,7 @@ public:
 	void setCommand(uint8_t newVal)			{ m_Command = newVal; };
 	void setParameter(uint16_t newVal)		{ m_Parameter = newVal; };
 	void setSubdevice(uint16_t newVal)		{ m_Subdevice = newVal; };
-	void setLength(uint8_t newVal)			{ m_Length = newVal; };
+	void setLength(size_t newVal)	    	{ m_Length = newVal; };
 	void setBuffer(const void *newVal)		{ if(m_Buffer) {delete [] m_Buffer; m_Buffer = 0;}
 											  if(newVal)   {m_Buffer = new uint8_t[m_Length]; memcpy(m_Buffer, newVal, m_Length);}
 											};
@@ -116,7 +116,7 @@ private:
 	uint8_t		m_Command;			// Which RDM command (E120_GET_COMMAND or E120_SET_COMMAND)
 	uint16_t	m_Parameter;		// Which PID (e.g. E120_DEVICE_INFO or E120_DEVICE_LABEL)
 	uint16_t	m_Subdevice;		// Which subdevice command is for (0 = root)
-	uint8_t		m_Length;			// Length of data in "buffer" for this command
+	size_t  	m_Length;			// Length of data in "buffer" for this command
 	uint8_t		*m_Buffer;			// Data to include with this command
 	uint8_t		m_TransactionNum;	// RDM transaction number
 	uint8_t		m_ResponseType;		// RDM response type (e.g. E120_RESPONSE_TYPE_ACK, E120_RESPONSE_TYPE_ACK_TIMER)
