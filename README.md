@@ -8,6 +8,9 @@ It supports DMX, RDM and "Raw Mode" - sending and receiving arbitrary serial
 data on the DMX bus. All of these features can be accessed through this DLL
 interface. Legacy one-port Gadgets are also supported.
 
+This is not official ETC software. For challenges using, integrating, compiling,
+or modifying this software, we encourage posting on the issues page of this project.
+
 32- and 64-bit DLLs are provided. The DLLs are built with the MSVC 2017
 toolchain. Currently, non-Windows platforms are not supported.
 
